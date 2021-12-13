@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'TemplateController@index');
+Route::get('/shop', 'ShopController@shop')->name('shop');
