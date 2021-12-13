@@ -1,0 +1,1 @@
+@extends('FrondEnd.master')

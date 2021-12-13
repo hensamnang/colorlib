@@ -5,6 +5,12 @@ use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
+    Error Route 2 ways to solve:
+    1.  use (Route::get('/', 'TemplateController@index'); but we need to find file name: RouteServiceProvider
+        and un-command [ protected $namespace = 'App\\Http\\Controllers';]).
+    2.  use (Route::get('/', 'App\\Http\\Controllers\TemplateController@index');
+)
+
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -13,6 +19,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TemplateController@index');
