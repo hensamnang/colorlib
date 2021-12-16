@@ -5,11 +5,21 @@ use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
-    Error Route 2 ways to solve:
-    1.  use (Route::get('/', 'TemplateController@index'); but we need to find file name: RouteServiceProvider
-        and un-command [ protected $namespace = 'App\\Http\\Controllers';]).
-    2.  use (Route::get('/', 'App\\Http\\Controllers\TemplateController@index');
-)
+    I. Error Route 2 ways to solve:
+        1.  use (Route::get('/', 'TemplateController@index'); but we need to find file name: RouteServiceProvider
+            and un-command [ protected $namespace = 'App\\Http\\Controllers';]).
+        2.  use (Route::get('/', 'App\\Http\\Controllers\TemplateController@index');
+    )
+    II. How to Link in blad.php: 
+        1. using with  route name   : <a href="{{route('home')}}">
+        2. using with  URL name     : <a href="{{url('/')}}">
+        3. using with  Link name    : <a href="https://laravel.com/docs"> 
+        
+    III. Access Asset URL:
+        1. Asset is the best approach help to access in URL like : JS, CSS , Image;
+            Ex: <img src="{{ asset('logo.png') }}" />
+                <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
 
 |--------------------------------------------------------------------------
 |
@@ -19,5 +29,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'TemplateController@index');
+Route::get('/', 'TemplateController@index')->name('home');
 Route::get('/shop', 'ShopController@shop')->name('shop');
